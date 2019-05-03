@@ -1,24 +1,16 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 const HooksContainer = () => {
 
-  const [frist, setFirst] = React.useState(Math.ceil(Math.random() * 9));
-  const [second, setSecond] = React.useState(Math.ceil(Math.random() * 9));
-  const [value, setValue] = React.useState('');
-  const [result, setResult] = React.useState('');
-
-  const onChangeInput = (e) => {
-    setValue(e.target.value)
-  }
-
-  const onSubmitForm = (e) => {
-
-  }
+  const [value, setValue] = useState(0);
+  
   return (
-    <div onSubmit = {this.onSubmitForm}>
-      {test}<br/>
-      {frist *  second} = {result}
-      <span onChange = {this.onChangeInput}> {value}</span>
+    <div>
+      <p>
+        현재 카운터는 <b>{value}</b>
+      </p>
+      <button onClick = {() => setValue(value+1)}>+1</button>
+      <button onClick = {() => setValue(value-1)}>-1</button>
     </div>
   )
 }
